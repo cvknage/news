@@ -1,0 +1,8 @@
+<div>
+    <md-input-container>
+        <label for="input">Name</label>
+        <input name="input" ng-model="$ctrl.userName" type="text" required md-maxlength="10" maxlength="10"/>
+    </md-input-container>
+    <br/>
+    {{$ctrl.userName ? $ctrl.hey($ctrl.userName) : $ctrl.hey("")}}
+</div>

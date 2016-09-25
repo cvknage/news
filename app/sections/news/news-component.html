@@ -1,0 +1,21 @@
+<md-list>
+    <md-list-item class="md-2-line _md-button-wrap _md md-with-secondary md-clickable" role="listitem" ng-repeat="item in $ctrl.tops">
+        <div md-ink-ripple class="md-button md-no-style">
+            <a class="md-no-style md-button md-ink-ripple" href="{{::item.storyHref}}" target="_blank">
+                <div class="md-ripple-container"></div>
+            </a>
+            <div class="md-list-item-inner">
+                <img class="md-avatar" ng-src="{{::item.imageHref}}"/>
+                <div class="md-list-item-text layout-column" layout="column">
+                    <h3>{{::item.title}}</h3>
+                    <p>by {{::item.author}} {{::$ctrl.getTimeAgo(item.pubDate)}} mins ago</p>
+                </div>
+            </div>
+            <div class="md-secondary-container">
+                <a href="{{::item.commentsHref}}" class="md-button md-ink-ripple" target="_blank">
+                    <md-icon class="material-icons">comment</md-icon>
+                </a>
+            </div>
+        </div>
+    </md-list-item>
+</md-list>

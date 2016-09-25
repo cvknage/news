@@ -1,0 +1,21 @@
+{
+    "attr-bans": ["align", "background", "bgcolor", "border", "frameborder", "longdesc", "marginwidth", "marginheight", "scrolling", "style"],
+    "attr-name-style": "dash",
+    "attr-no-unsafe-char": true,
+    "attr-quote-style": "double",
+    "attr-req-value": false,
+    "doctype-first": false,
+    "doctype-html5": true,
+    "html-req-lang": true,
+    "id-class-style": false,
+    "img-req-alt": false,
+    "img-req-src": false,
+    "indent-style": "spaces",
+    "indent-width": 4,
+    "label-req-for" : false,
+    "line-end-style": false,
+    "tag-bans": ["b", "i"],
+    "tag-name-lowercase": true,
+    "tag-name-match": true,
+    "title-no-dup": true
+}
