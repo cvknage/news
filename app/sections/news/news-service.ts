@@ -84,7 +84,7 @@ export class NewsService {
                     if (imgSrc.substr(0, 1) !== '/') {
                         imgSrc = '/' + imgSrc;
                     }
-                    deferred.resolve('//' + ahref.hostname + imgSrc);
+                    deferred.resolve('http://' + ahref.hostname + imgSrc);
                     return;
                 }
             }
