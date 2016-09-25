@@ -5,25 +5,12 @@
 
 set -e # exit with nonzero exit code if anything fails
 SOURCE_BRANCH="master"
-TARGET_BRANCH="gh-pages"
-OUT_DIR="target/dist"
 
 if [ "$TRAVIS_BRANCH" != $SOURCE_BRANCH ]
 then
   echo "This commit was made against the $TRAVIS_BRANCH and not the master! No deploy!"
   exit 0
 fi
-
-# Clone the existing gh-pages for this repo into out/
-# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-mkdir -p $OUT_DIR
-git clone $REPO $OUT_DIR
-cd $OUT_DIR
-git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ..
-
-# Clean out existing contents
-rm -rf $OUT_DIR/**/* || exit 0
 
 # clean and build our app
 gulp clean
