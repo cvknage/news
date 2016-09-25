@@ -99,7 +99,7 @@ export class NewsService {
             this.addUrl('//assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png', story, elementKey);
         } else {
             // I give up
-            this.addUrl('//www.lifeprint.com/asl101/signjpegs/w/what.h1.jpg', story, elementKey);
+            this.addUrl('http://www.lifeprint.com/asl101/signjpegs/w/what.h1.jpg', story, elementKey);
         }
     }
 
