@@ -58,7 +58,8 @@
     "type": "git"
   },
   "scripts": {
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "deploy": "./deploy-ghpages.sh"
   },
   "readme": "README.md",
   "dependencies": {
