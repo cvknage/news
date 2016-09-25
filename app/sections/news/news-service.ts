@@ -73,7 +73,7 @@ export class NewsService {
         this.$http.get(yql).success((data: any) => {
             let results = data.query.results;
             if (results && results.img[0]) {
-                let imgSrc = results.img[0].src;
+                let imgSrc: string = results.img[0].src;
                 let ahref = document.createElement('a');
                 ahref.href = story.url;
                 if (/^(http|\/\/).*(gif|jpeg|jpg|png)$/.test(imgSrc)) {
@@ -81,7 +81,10 @@ export class NewsService {
                     return;
                 }
                 if (/.*(gif|jpeg|jpg|png)$/.test(imgSrc)) {
-                    deferred.resolve(imgSrc);
+                    if (imgSrc.substr(0, 1) !== '/') {
+                        imgSrc = '/' + imgSrc;
+                    }
+                    deferred.resolve('//' + ahref.hostname + imgSrc);
                     return;
                 }
             }
