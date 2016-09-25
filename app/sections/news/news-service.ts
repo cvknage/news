@@ -10,7 +10,7 @@ export class NewsService {
     constructor($firebaseArray: any, $firebaseObject: any, private $http: ng.IHttpService, private $q: ng.IQService) {
         let hackerNews = firebase.initializeApp({ databaseURL: 'https://hacker-news.firebaseio.com' });
         let hackerNewsRef = hackerNews.database().ref('/v0');
-        let topStoriesRef = hackerNewsRef.child('topstories').limitToFirst(10);
+        let topStoriesRef = hackerNewsRef.child('topstories').limitToFirst(50);
 
         // Create a firebaseArray that automatically syncs when topstories in db change
         this.topStories = $firebaseArray(topStoriesRef);
